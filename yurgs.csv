@@ -69,12 +69,13 @@ G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for 
 G,https://github.com/lukesmithxyz/st.git,is my custom build of suckless's terminal emulator.
 ,docx2txt,enables .docx file previews in vifm.
 ,odt2txt,enables .odt file previews in vifm.
-,xclip,does enable reading and copying to clipboard. 
+,xclip,does enable reading and copying to clipboard.
 ,xsel,does enable reading of selection.
 ,chromium,is the browser that replaces Firefox.
 ,python-pywal,does really cool things.
 ,ncftp,uploads to FTP server.
 ,wget,does downloads from given link.
+,feh,is thing for pywal.
 A,spotify,plays music.
 A,cava,is visualiser of sound.
 A,betterlockscreen-git,is replacement of i3lock-color (it's better and faster).

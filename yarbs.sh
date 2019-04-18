@@ -12,16 +12,14 @@ while getopts ":a:r:p:h" o; do case "${o}" in
 	p) progsfile=${OPTARG} ;;
 	a) aurhelper=${OPTARG} ;;
 	d) yuridot=${OPTARG} ;;
-	f) yurifile=${OPTARG} ;;
 	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 esac done
 
 # DEFAULTS:
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
 [ -z "$yuridot" ] && yuridot="https://github.com/yurisuki/yuririce.git"
-[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/LukeSmithxyz/LARBS/master/progs.csv"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/yurisuki/YARBS/master/yurgs.csv"
 [ -z "$aurhelper" ] && aurhelper="trizen"
-[ -z "$yurifile" ] && yurifile="https://raw.githubusercontent.com/yurisuki/YARBS/master/yurgs.csv"
 
 ### FUNCTIONS ###
 
@@ -128,20 +126,6 @@ installationloop() { \
 		esac
 	done < /tmp/progs.csv ;}
 
-installyuri() { \
-	([ -f "$yurifile" ] && cp "$yurifile" /tmp/progS.csv) || curl -Ls "$progsfile" | sed '/^#/d' > /tmp/progS.csv
-	total=$(wc -l < /tmp/progS.csv)
-	aurinstalled=$(pacman -Qm | awk '{print $1}')
-	while IFS=, read -r tag program comment; do
-		n=$((n+1))
-		echo "$comment" | grep "^\".*\"$" >/dev/null 2>&1 && comment="$(echo "$comment" | sed "s/\(^\"\|\"$\)//g")"
-		case "$tag" in
-			"") maininstall "$program" "$comment" ;;
-			"A") aurinstall "$program" "$comment" ;;
-			"R") mainuninstall "$program" "$comment" ;;
-		esac
-	done < /tmp/progS.csv ;}
-
 putgitrepo() { # Downlods a gitrepo $1 and places the files in $2 only overwriting conflicts
 	dialog --infobox "Downloading and installing config files..." 4 60
 	dir=$(mktemp -d)
@@ -219,7 +203,6 @@ manualinstall $aurhelper || error "Failed to install AUR helper."
 # the user has been created and has priviledges to run sudo without a password
 # and all build dependencies are installed.
 installationloop
-installyuri
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
@@ -249,4 +232,3 @@ newperms "%wheel ALL=(ALL) NOPASSWD:ALL"
 # Last message! Install complete!
 finalize
 clear
-
