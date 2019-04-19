@@ -149,6 +149,11 @@ resetpulse() { dialog --infobox "Reseting Pulseaudio..." 4 50
 	killall pulseaudio
 	sudo -n "$name" pulseaudio --start ;}
 
+resetlock() { # Refresh lock picture for betterlockscreen
+	dialog --infobox "Refreshing lock screen picture..." 4 50
+	betterlockscreen -u ~/.config/wall.png >/dev/null
+}
+
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
 	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Luke" 12 80
@@ -223,6 +228,9 @@ serviceinit NetworkManager cronie
 
 # Most important command! Get rid of the beep!
 systembeepoff
+
+# Refresh lock screen picture, so you can lock the screen.
+resetlock
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # all commands without the password prompt
