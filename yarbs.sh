@@ -45,7 +45,7 @@ getuserandpass() { \
 
 usercheck() { \
 	! (id -u "$name" >/dev/null) 2>&1 ||
-	dialog --colors --title "WARNING!" --yes-label "CONTINUE" --no-label "No wait..." --yesno "The user \`$name\` already exists on this system. LARBS can install for a user already existing, but it will \\Zboverwrite\\Zn any conflicting settings/dotfiles on the user account.\\n\\nLARBS will \\Zbnot\\Zn overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that LARBS will change $name's password to the one you just gave." 14 70
+	dialog --colors --title "WARNING!" --yes-label "CONTINUE" --no-label "No wait..." --yesno "The user \`$name\` already exists on this system. YARBS can install for a user already existing, but it will \\Zboverwrite\\Zn any conflicting settings/dotfiles on the user account.\\n\\nYARBS will \\Zbnot\\Zn overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that YARBS will change $name's password to the one you just gave." 14 70
 	}
 
 preinstallmsg() { \
@@ -81,18 +81,18 @@ manualinstall() { # Installs $1 manually if not installed. Used only for AUR hel
 	cd /tmp || return) ;}
 
 maininstall() { # Installs all needed programs from main repo.
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70
+	dialog --title "YARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70
 	pacman --noconfirm --needed -S "$1" >/dev/null 2>&1
 	}
 
 mainuninstall() { # Removes needed programs from local system.
-	dialog --title "LARBS Installation" --infobox "Uninstalling \`$1\` ($n of $total). $1 $2" 5 70
+	dialog --title "YARBS Installation" --infobox "Uninstalling \`$1\` ($n of $total). $1 $2" 5 70
 	pacman --noconfirm --needed -R "$1" >/dev/null 2>&1
 	}
 
 gitmakeinstall() {
 	dir=$(mktemp -d)
-	dialog --title "LARBS Installation" --infobox "Installing \`$(basename "$1")\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") $2" 5 70
+	dialog --title "YARBS Installation" --infobox "Installing \`$(basename "$1")\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") $2" 5 70
 	git clone --depth 1 "$1" "$dir" >/dev/null 2>&1
 	cd "$dir" || exit
 	make >/dev/null 2>&1
@@ -100,13 +100,13 @@ gitmakeinstall() {
 	cd /tmp || return ;}
 
 aurinstall() { \
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2" 5 70
+	dialog --title "YARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2" 5 70
 	echo "$aurinstalled" | grep "^$1$" >/dev/null 2>&1 && return
 	sudo -u "$name" $aurhelper -S --noconfirm "$1" >/dev/null 2>&1
 	}
 
 pipinstall() { \
-	dialog --title "LARBS Installation" --infobox "Installing the Python package \`$1\` ($n of $total). $1 $2" 5 70
+	dialog --title "YARBS Installation" --infobox "Installing the Python package \`$1\` ($n of $total). $1 $2" 5 70
 	command -v pip || pacman -S --noconfirm --needed python-pip >/dev/null 2>&1
 	yes | pip install "$1"
 	}
@@ -151,7 +151,7 @@ resetpulse() { dialog --infobox "Reseting Pulseaudio..." 4 50
 
 resetlock() { # Refresh lock picture for betterlockscreen
 	dialog --infobox "Refreshing lock screen picture..." 4 50
-	betterlockscreen -u ~/.config/wall.png >/dev/null
+	betterlockscreen -u /home/$name/.config/wall.png >/dev/null
 }
 
 finalize(){ \
@@ -185,7 +185,7 @@ adduserandpass || error "Error adding username and/or password."
 # Refresh Arch keyrings.
 refreshkeys || error "Error automatically refreshing Arch keyring. Consider doing so manually."
 
-dialog --title "LARBS Installation" --infobox "Installing \`basedevel\` and \`git\` for installing other software." 5 70
+dialog --title "YARBS Installation" --infobox "Installing \`basedevel\` and \`git\` for installing other software." 5 70
 pacman --noconfirm --needed -S base-devel git >/dev/null 2>&1
 [ -f /etc/sudoers.pacnew ] && cp /etc/sudoers.pacnew /etc/sudoers # Just in case
 
@@ -216,6 +216,9 @@ rm -f "/home/$name/README.md" "/home/$name/LICENSE"
 # Pulseaudio, if/when initially installed, often needs a restart to work immediately.
 [ -f /usr/bin/pulseaudio ] && resetpulse
 
+# Refresh lock screen picture, so you can lock the screen.
+resetlock || error "Failed to refresh lock screen picture."
+
 # Install vim `plugged` plugins.
 sudo -u "$name" mkdir -p "/home/$name/.config/nvim/autoload"
 curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > "/home/$name/.config/nvim/autoload/plug.vim"
@@ -228,9 +231,6 @@ serviceinit NetworkManager cronie
 
 # Most important command! Get rid of the beep!
 systembeepoff
-
-# Refresh lock screen picture, so you can lock the screen.
-resetlock
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # all commands without the password prompt
