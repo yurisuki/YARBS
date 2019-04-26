@@ -75,6 +75,7 @@ G,https://github.com/lukesmithxyz/st.git,is my custom build of suckless's termin
 ,ncftp,uploads to FTP server.
 ,wget,does downloads from given link.
 ,feh,is thing for pywal.
+,python-dbus,is used by spotify for music for statusbar.
 A,spotify,plays music.
 A,cava,is visualiser of sound.
 A,betterlockscreen-git,is replacement of i3lock-color (it's better and faster).
