@@ -154,6 +154,11 @@ resetlock() { # Refresh lock picture for betterlockscreen
 	betterlockscreen -u /home/$name/.config/wall.png >/dev/null
 }
 
+ryu-login() {
+	dialog --infobox "Downloading ryu-login art..." 4 35
+	curl -s https://raw.githubusercontent.com/xero/dotfiles/master/ryu-login/etc/issue >/etc/issue
+}
+
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
 	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Luke" 12 80
@@ -218,6 +223,9 @@ rm -f "/home/$name/README.md" "/home/$name/click.png"
 
 # Refresh lock screen picture, so you can lock the screen.
 resetlock || error "Failed to refresh lock screen picture."
+
+# Download ryu-login made by xero and install it.
+ryu-login
 
 # Install vim `plugged` plugins.
 sudo -u "$name" mkdir -p "/home/$name/.config/nvim/autoload"
