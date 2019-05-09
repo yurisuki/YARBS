@@ -151,7 +151,7 @@ resetpulse() { dialog --infobox "Reseting Pulseaudio..." 4 50
 
 resetlock() { # Refresh lock picture for betterlockscreen
 	dialog --infobox "Refreshing lock screen picture..." 4 50
-	sudo -u "$name" betterlockscreen -u /home/$name/.config/wall.png >/dev/null
+	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null
 }
 
 ryu-login() {
