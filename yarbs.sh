@@ -154,9 +154,24 @@ resetlock() { # Refresh lock picture for betterlockscreen
 	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null
 }
 
-ryu-login() {
+ryu-login() { # Download and install xer0's login art
 	dialog --infobox "Downloading ryu-login art..." 4 35
 	curl -s https://raw.githubusercontent.com/xero/dotfiles/master/ryu-login/etc/issue >/etc/issue
+}
+
+figlet() { # Download and install some figlet fonts.
+	dialog --infobox "Downloading some figlet fonts..." 4 40
+	git clone https://github.com/xero/figlet-fonts.git /usr/share/figlet/fonts/ >/dev/null 2>&1
+	rm /usr/share/figlet/fonts/README.md
+}
+
+vim() { # Install vim `plugged` plugins.
+	dialog --infobox "Downloading vim \`plugged\` plugins..." 4 50
+	sudo -u "$name" mkdir -p "/home/$name/.config/nvim/autoload"
+	curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > "/home/$name/.config/nvim/autoload/plug.vim"
+	dialog --infobox "Installing (neo)vim plugins..." 4 50
+	(sleep 30 && killall nvim) &
+	sudo -u "$name" nvim -E -c "PlugUpdate|visual|q|q" >/dev/null 2>&1
 }
 
 finalize(){ \
@@ -227,12 +242,11 @@ resetlock || error "Failed to refresh lock screen picture."
 # Download ryu-login made by xero and install it.
 ryu-login
 
+# Download some figlet fonts and install them.
+figlet
+
 # Install vim `plugged` plugins.
-sudo -u "$name" mkdir -p "/home/$name/.config/nvim/autoload"
-curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > "/home/$name/.config/nvim/autoload/plug.vim"
-dialog --infobox "Installing (neo)vim plugins..." 4 50
-(sleep 30 && killall nvim) &
-sudo -u "$name" nvim -E -c "PlugUpdate|visual|q|q" >/dev/null 2>&1
+vim
 
 # Enable services here.
 serviceinit NetworkManager cronie
