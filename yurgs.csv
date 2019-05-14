@@ -18,7 +18,6 @@
 ,dunst,is a suckless notification system.
 ,exfat-utils,allows management of FAT drives.
 ,sxiv,is a minimalist image viewer.
-,ranger,is cool file manager.
 ,ffmpeg,can record and splice video and audio on the command line.
 ,gnome-keyring,serves as the system keyring.
 A,gtk-theme-arc-gruvbox-git,gives the dark GTK theme used in LARBS.
