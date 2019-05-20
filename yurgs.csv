@@ -72,6 +72,7 @@ G,https://github.com/lukesmithxyz/st.git,is my custom build of suckless's termin
 ,chromium,is the browser that replaces Firefox.
 ,python-pywal,does really cool things.
 ,ncftp,uploads to FTP server.
+,sxhkd,is for the keybindings.
 ,wget,does downloads from given link.
 ,feh,is thing for pywal.
 ,figlet,is for cool ascii arts on terminal.
