@@ -3,8 +3,8 @@
 ,xorg-server,is the graphical server.
 ,xorg-xwininfo,allows querying information about windows.
 ,xorg-xinit,starts the graphical server.
-,ttf-inconsolata,is the monospace font of LARBS.
-,ttf-linux-libertine,provides the sans and serif fonts for LARBS.
+,ttf-inconsolata,is the monospace font of YARBS.
+,ttf-linux-libertine,provides the sans and serif fonts for YARBS.
 ,vifm,is an extensive terminal file manager that everyone likes.
 ,ed,is the standard editor!
 ,tree,lists directory contents like trees. Used by vifm.
@@ -20,7 +20,7 @@
 ,sxiv,is a minimalist image viewer.
 ,ffmpeg,can record and splice video and audio on the command line.
 ,gnome-keyring,serves as the system keyring.
-A,gtk-theme-arc-gruvbox-git,gives the dark GTK theme used in LARBS.
+A,gtk-theme-arc-gruvbox-git,gives the dark GTK theme used in YARBS.
 ,neovim,an tidier vim with some useful features
 ,i3blocks,is the status bar.
 ,mpd,is a lightweight music daemon.
@@ -35,18 +35,18 @@ A,ttf-symbola,provides unicode and emoji symbols.
 ,pulseaudio,is the audio system (>inb4 bloat).
 ,pulseaudio-alsa,is an audio interface with ALSA.
 ,pulsemixer,is an intuitive ncurses audio controller.
-,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in LARBS.
+,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in YARBS.
 A,sc-im,is an Excel-like terminal spreadsheet manager.
 A,htop-vim-git,provides system usage information and displays processes.
 ,maim,can take quick screenshots at your request.
 ,socat,is a socket utility.
-,tmux,is a terminal multiplexer and the dropdown window in LARBS.
+,tmux,is a terminal multiplexer and the dropdown window in YARBS.
 A,unclutter-xfixes-git,hides an inactive mouse.
 ,unrar,extracts rar's.
 ,unzip,unzips zips.
 A,urlscan,parses URLs in the terminal allowing keyboard-based selection.
 ,w3m,is a terminal browser which can also view images.
-,xcape,gives the special escape/super mappings of LARBS.
+,xcape,gives the special escape/super mappings of YARBS.
 ,xclip,allows for copying and pasting from the command line.
 ,xdotool,provides window action utilities on the command line.
 ,xorg-xdpyinfo,aids with resolution determination and screen recording.
