@@ -18,7 +18,7 @@ esac done
 # DEFAULTS:
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
 [ -z "$yuridot" ] && yuridot="https://github.com/yurisuki/yuririce.git"
-[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/yurisuki/YARBS/master/yurgs.csv"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/yurisuki/YARBS/master/archlinux/yurgs.csv"
 [ -z "$aurhelper" ] && aurhelper="trizen"
 
 ### FUNCTIONS ###
