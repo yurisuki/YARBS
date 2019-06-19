@@ -130,7 +130,7 @@ finalize(){ \
 ### This is how everything happens in an intuitive format and order.
 
 # Check if user is root on Arch distro. Install dialog.
-xbps-install -Syu dialog || error "Are you sure you're running this as the root user? Are you sure you're using an Arch-based distro? ;-) Are you sure you have an internet connection? Are you sure your Arch keyring is updated?"
+xbps-install -Syu dialog 
 
 # Welcome user.
 welcomemsg || error "User exited."
@@ -142,8 +142,6 @@ getuser || error "User exited."
 preinstallmsg || error "User exited."
 
 ### The rest of the script requires no user input.
-
-adduserandpass || error "Error adding username and/or password."
 
 dialog --title "YARBS Installation" --infobox "Installing \`base-devel\` and \`git\` for installing other software." 5 70
 xbps-install -y curl base-devel git >/dev/null 2>&1
