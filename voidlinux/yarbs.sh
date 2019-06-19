@@ -18,7 +18,6 @@ esac done
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
 [ -z "$yuridot" ] && yuridot="https://github.com/yurisuki/yuririce.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/yurisuki/YARBS/master/voidlinux/yurgs.csv"
-[ -z "$aurhelper" ] && aurhelper="trizen"
 
 ### FUNCTIONS ###
 
