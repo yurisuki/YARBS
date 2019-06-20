@@ -72,6 +72,7 @@ G,https://github.com/lukesmithxyz/st.git,is my custom build of suckless's termin
 ,feh,is thing for pywal.
 ,figlet,is for cool ascii arts on terminal.
 ,python-dbus,is used by spotify for music for statusbar.
+,python-dbus-devel,is also used by spotify for music for statusbar.
 ,spotify,plays music.
 ,cava,is visualiser of sound.
 ,betterlockscreen,is replacement of i3lock-color (it's better and faster).
