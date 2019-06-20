@@ -130,7 +130,7 @@ finalize(){ \
 ### This is how everything happens in an intuitive format and order.
 
 # Check if user is root on Arch distro. Install dialog.
-xbps-install -Syu dialog 
+xbps-install -Syu dialog
 
 # Welcome user.
 welcomemsg || error "User exited."
@@ -143,8 +143,8 @@ preinstallmsg || error "User exited."
 
 ### The rest of the script requires no user input.
 
-dialog --title "YARBS Installation" --infobox "Installing \`base-devel\` and \`git\` for installing other software." 5 70
-xbps-install -y curl base-devel git >/dev/null 2>&1
+dialog --title "YARBS Installation" --infobox "Installing all needed packages." 5 70
+xbps-install -y curl base-devel git libXinerama-devel libX11 libX11-devel libXft libXft-devel fontconfig fontconfig-devel void-repo-nonfree >/dev/null 2>&1
 
 # Allow user to run sudo without password. Since AUR programs must be installed
 # in a fakeroot environment, this is required for all builds with AUR.
@@ -177,7 +177,7 @@ figlet
 vim
 
 # Enable services here.
-serviceinit NetworkManager dbus pulseaudio 
+serviceinit NetworkManager dbus pulseaudio
 
 # Most important command! Get rid of the beep!
 systembeepoff
