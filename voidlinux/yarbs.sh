@@ -176,8 +176,13 @@ figlet
 # Install vim `plugged` plugins.
 vim
 
+<<<<<<< HEAD
 # Enable services here.
 serviceinit NetworkManager dbus pulseaudio
+=======
+# Enable services here..
+serviceinit NetworkManager dbus pulseaudio 
+>>>>>>> 9d315d09c88cb7384638ec2fcf475eb8f81b90fd
 
 # Most important command! Get rid of the beep!
 systembeepoff
