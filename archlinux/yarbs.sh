@@ -233,7 +233,7 @@ installationloop
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
 putgitrepo "$yuridot" "/home/$name"
-rm -f "/home/$name/README.md" "/home/$name/click.png"
+rm -f "/home/$name/README.md" "/home/$name/click.png" "/home/$name/LICENSE"
 
 # Pulseaudio, if/when initially installed, often needs a restart to work immediately.
 [ -f /usr/bin/pulseaudio ] && resetpulse
