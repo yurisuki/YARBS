@@ -126,7 +126,23 @@ installationloop() { \
 		esac
 	done < /tmp/progs.csv ;}
 
-putgitrepo() { # Downlods a gitrepo $1 and places the files in $2 only overwriting conflicts
+fontinstall() { # Downloads some fonts.
+	fonts="ttf-anonymous-pro
+	ttf-bitstream-vera
+	ttf-dejavu
+	ttf-droid
+	ttf-gentium
+	ttf-liberation
+	ttf-ubuntu-font-family" && echo "$fonts" > /tmp/fonts
+	totalfonts=$(wc -l < /tmp/fonts)
+	fontsn=1
+	for currentfont in $(cat /tmp/fonts); do
+		dialog --title "YARBS Installation" --infobox "Installing font \`$currentfont\` ($fontsn of $totalfonts)." 4 70
+		fontsn=$((fontsn+1))
+		pacman -S "$currentfont" --noconfirm --needed >/dev/null 2>&1;
+	done ;}
+
+putgitrepo() { # Downloads a gitrepo $1 and places the files in $2 only overwriting conflicts
 	dialog --infobox "Downloading and installing config files..." 4 60
 	dir=$(mktemp -d)
 	[ ! -d "$2" ] && mkdir -p "$2" && chown -R "$name:wheel" "$2"
@@ -229,6 +245,9 @@ manualinstall $aurhelper || error "Failed to install AUR helper."
 # the user has been created and has priviledges to run sudo without a password
 # and all build dependencies are installed.
 installationloop
+
+# Install the fonts
+fontinstall
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
