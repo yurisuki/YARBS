@@ -161,8 +161,10 @@ ryu-login() { # Download and install xer0's login art
 
 figlet() { # Download and install some figlet fonts.
 	dialog --infobox "Downloading some figlet fonts..." 4 40
+	rm -rf figlet-fonts >/dev/null 2>&1
 	git clone https://github.com/xero/figlet-fonts.git >/dev/null 2>&1
-	mv figlet-fonts/* /usr/share/figlet/.
+	cp figlet-fonts/* /usr/share/figlet/. >/dev/null 2>&1
+	mv -f figlet-fonts/* /usr/share/figlet/fonts/. >/dev/null 2>&1
 }
 
 vim() { # Install vim `plugged` plugins.
