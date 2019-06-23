@@ -170,9 +170,9 @@ resetlock() { # Refresh lock picture for betterlockscreen
 	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null
 }
 
-ryu-login() { # Download and install xer0's login art
-	dialog --infobox "Downloading ryu-login art..." 4 35
-	curl -s https://raw.githubusercontent.com/xero/dotfiles/master/ryu-login/etc/issue >/etc/issue
+kermit-login() { # Download and install Kermit login art...
+	dialog --infobox "Downloading Kermit login art... <3" 4 35
+	curl -s https://puu.sh/DJEJC/260246d0ad >/etc/issue
 }
 
 figlet() { # Download and install some figlet fonts.
@@ -260,8 +260,8 @@ rm -f "/home/$name/README.md" "/home/$name/click.png" "/home/$name/LICENSE"
 # Refresh lock screen picture, so you can lock the screen.
 resetlock || error "Failed to refresh lock screen picture."
 
-# Download ryu-login made by xero and install it.
-ryu-login
+# Download Kermit login art and install it.
+kermit-login
 
 # Download some figlet fonts and install them.
 figlet
