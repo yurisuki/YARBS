@@ -1,0 +1,4 @@
+#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
+,i3-gaps,is the main graphical user interface and window manager.
+A,gtk-theme-arc-gruvbox-git,gives the dark GTK theme used in YARBS.
+G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for selection.

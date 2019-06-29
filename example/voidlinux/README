@@ -1,0 +1,24 @@
+This is template edition of YARBS.
+--voidlinux--
+
+-------
+yurgs.csv - This file includes programs you want to have installed by the script.
+
+TAGS and their meanings: 	empty - Will install program using `xbps-install`.
+				G - Will clone repository, compile it using `make && sudo make install`. This requires git cloning URL.
+				N - Will install program using `npm`.
+
+FORMATTING:			tag,packagename/giturl,text
+-------
+
+
+
+-------
+yarbs.sh - The main script.
+
+Adding git repository URL:	You can add git cloning URL as a variable as shown in DEFAULTS category, or directly inside putgitrepo (line 18 and 156).
+Changing welcoming and finalizing message: Change text inside quotes (line 32 and 121).
+Programs that will be used while installation: You can add some programs which will be needed within installation (e.g. for compiling) (line 141).
+Execute custom function:	You can make your own function, which will be later executed by the script (line 108 and 174).
+Enable custom services:		You can enable custom services using `systemd`. (line 181).
+-------

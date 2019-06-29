@@ -1,0 +1,9 @@
+This folder includes examples/templates for making your YARBS installer that deploys your dotfiles to your directory and installs programs you've chosen to.
+
+example
+├── archlinux
+│   ├── yarbs.sh # The script itself.
+│   └── yurgs.csv # List with programs you want to have installed.
+└── voidlinux
+    ├── yarbs.sh # The script itself.
+    └── yurgs.csv # List with programs you want to have installed.
