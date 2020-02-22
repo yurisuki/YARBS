@@ -41,7 +41,9 @@ preinstallmsg() { \
 
 newperms() { # Set special sudoers settings for install (or after).
 	sed -i "/#YARBS/d" /etc/sudoers
-	echo "$* #YARBS" >> /etc/sudoers ;}
+	echo "$* #YARBS" >> /etc/sudoers
+	sed -i "/#YARBS/d" /etc/doas.conf
+	echo "permit nopass $name as root #YARBS" >> /etc/doas.conf ;}
 
 maininstall() { # Installs all needed programs from main repo.
 	dialog --title "YARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70

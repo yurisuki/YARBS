@@ -67,8 +67,9 @@ refreshkeys() { \
 
 newperms() { # Set special sudoers settings for install (or after).
 	sed -i "/#YARBS/d" /etc/sudoers
-	echo "$* #YARBS" >> /etc/sudoers ;}
-
+	echo "$* #YARBS" >> /etc/sudoers
+	sed -i "/#YARBS/d" /etc/doas.conf
+	echo "permit nopass $name as root #YARBS" >> /etc/doas.conf ;}
 manualinstall() { # Installs $1 manually if not installed. Used only for AUR helper here.
 	[ -f "/usr/bin/$1" ] || (
 	dialog --infobox "Installing \"$1\", an AUR helper..." 4 50
