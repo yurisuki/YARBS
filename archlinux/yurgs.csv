@@ -10,6 +10,7 @@ A,doas,is the faster sudo replacement.
 ,ed,is the standard editor!
 ,tree,lists directory contents like trees. Used by vifm.
 ,arandr,is a UI for screen adjustment.
+,kitty,is a terminal emulator used in YARBS.
 ,bc,is used for a dropdown calculator.
 ,calcurse,is a lightweight terminal-based calendar.
 ,xcompmgr,is for transparency and removing screen-tearing.
