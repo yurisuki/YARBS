@@ -171,7 +171,7 @@ resetlock() { # Refresh lock picture for betterlockscreen
 	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null
 }
 
-kermit-login() { # Download and install Kermit login art...
+kermit() { # Download and install Kermit login art...
 	dialog --infobox "Downloading Kermit login art... <3" 4 35
 	curl -s https://puu.sh/DJEJC/260246d0ad >/etc/issue
 }
@@ -262,7 +262,7 @@ rm -f "/home/$name/README.md" "/home/$name/click.png" "/home/$name/LICENSE"
 resetlock || error "Failed to refresh lock screen picture."
 
 # Download Kermit login art and install it.
-kermit-login
+kermit
 
 # Download some figlet fonts and install them.
 figlet
