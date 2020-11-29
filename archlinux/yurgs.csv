@@ -64,10 +64,10 @@ A,python-ueberzug,generates image previews in vifm and other terminal programs.
 ,fzf,is a fuzzy finder tool.
 ,highlight,can highlight code output.
 ,xorg-xbacklight,enables changing screen brightness levels.
+A,libxft-bgra-git,is for viewing emojis in tools, that don't support them by default.
 A,task-spooler,queues commands or files for download.
 A,simple-mtpfs,enables the mounting of cell phones.
 G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for selection.
-G,https://github.com/lukesmithxyz/st.git,is my custom build of suckless's terminal emulator.
 ,docx2txt,enables .docx file previews in vifm.
 ,odt2txt,enables .odt file previews in vifm.
 ,xclip,does enable reading and copying to clipboard.
@@ -80,9 +80,5 @@ G,https://github.com/lukesmithxyz/st.git,is my custom build of suckless's termin
 ,feh,is thing for pywal.
 ,figlet,is for cool ascii arts on terminal.
 ,python-dbus,is used by spotify for music for statusbar.
-A,spotify,plays music.
-A,cava,is visualiser of sound.
 A,betterlockscreen-git,is replacement of i3lock-color (it's better and faster).
 A,sp,is Spotify dbus controller.
-A,spicetify-cli,is an utility for making Spotify look and work better.
-A,spotify-dl-git,is for downloading Spotify music locally to your computer.

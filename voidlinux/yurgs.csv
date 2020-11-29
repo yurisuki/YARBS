@@ -63,7 +63,6 @@ N,emojione,is a package that gives the system unicode symbols and emojis used in
 ,highlight,can highlight code output.
 ,simple-mtpfs,enables the mounting of cell phones.
 G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for selection.
-G,https://github.com/lukesmithxyz/st.git,is my custom build of suckless's terminal emulator.
 ,docx2txt,enables .docx file previews in vifm.
 ,odt2txt,enables .odt file previews in vifm.
 ,xsel,does enable reading of selection.
@@ -76,6 +75,5 @@ G,https://github.com/lukesmithxyz/st.git,is my custom build of suckless's termin
 ,figlet,is for cool ascii arts on terminal.
 ,python-dbus,is used by spotify for music for statusbar.
 ,python-dbus-devel,is also used by spotify for music for statusbar.
-,spotify,plays music.
 ,cava,is visualiser of sound.
 ,betterlockscreen,is replacement of i3lock-color (it's better and faster).

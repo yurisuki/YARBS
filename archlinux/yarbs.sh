@@ -69,7 +69,9 @@ newperms() { # Set special sudoers settings for install (or after).
 	sed -i "/#YARBS/d" /etc/sudoers
 	echo "$* #YARBS" >> /etc/sudoers
 	sed -i "/#YARBS/d" /etc/doas.conf
-	echo "permit nopass $name as root #YARBS" >> /etc/doas.conf ;}
+	echo "permit nopass $name as root #YARBS" >> /etc/doas.conf
+	mkdir /usr/etc
+	ln -s /etc/doas.conf /usr/etc/doas.conf ;}
 manualinstall() { # Installs $1 manually if not installed. Used only for AUR helper here.
 	[ -f "/usr/bin/$1" ] || (
 	dialog --infobox "Installing \"$1\", an AUR helper..." 4 50
@@ -171,11 +173,6 @@ resetlock() { # Refresh lock picture for betterlockscreen
 	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null
 }
 
-kermit() { # Download and install Kermit login art...
-	dialog --infobox "Downloading Kermit login art... <3" 4 35
-	curl -s https://puu.sh/DJEJC/260246d0ad >/etc/issue
-}
-
 figlet() { # Download and install some figlet fonts.
 	dialog --infobox "Downloading some figlet fonts..." 4 40
 	rm -rf figlet-fonts >/dev/null 2>&1
@@ -260,9 +257,6 @@ rm -f "/home/$name/README.md" "/home/$name/click.png" "/home/$name/LICENSE"
 
 # Refresh lock screen picture, so you can lock the screen.
 resetlock || error "Failed to refresh lock screen picture."
-
-# Download Kermit login art and install it.
-kermit
 
 # Download some figlet fonts and install them.
 figlet
