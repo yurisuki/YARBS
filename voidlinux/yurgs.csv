@@ -38,7 +38,7 @@ N,emojione,is a package that gives the system unicode symbols and emojis used in
 ,pulsemixer,is an intuitive ncurses audio controller.
 ,ImageMagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in YARBS.
 ,sc-im,is an Excel-like terminal spreadsheet manager.
-,htop,provides system usage information and displays processes.
+,gotop,provides system usage information and displays processes.
 ,maim,can take quick screenshots at your request.
 ,socat,is a socket utility.
 ,tmux,is a terminal multiplexer and the dropdown window in YARBS.
