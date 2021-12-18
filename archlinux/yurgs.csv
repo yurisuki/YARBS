@@ -37,6 +37,7 @@ A,ttf-symbola,provides unicode and emoji symbols.
 ,pulseaudio,is the audio system (>inb4 bloat).
 ,pulseaudio-alsa,is an audio interface with ALSA.
 ,pulsemixer,is an intuitive ncurses audio controller.
+,playerctl,is for music control all over the system.
 ,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in YARBS.
 A,sc-im,is an Excel-like terminal spreadsheet manager.
 A,gotop,provides system usage information and displays processes.
@@ -72,13 +73,11 @@ G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for 
 ,odt2txt,enables .odt file previews in vifm.
 ,xclip,does enable reading and copying to clipboard.
 ,xsel,does enable reading of selection.
-,chromium,is the browser that replaces Firefox.
-,python-pywal,does really cool things.
+,firefox,is browser for YARBS.
+,python-pywal,does really cool things (sets wallpaper, and then colors all over my ricing).
 ,ncftp,uploads to FTP server.
 ,sxhkd,is for the keybindings.
 ,wget,does downloads from given link.
 ,feh,is thing for pywal.
 ,figlet,is for cool ascii arts on terminal.
-,python-dbus,is used by spotify for music for statusbar.
 A,betterlockscreen-git,is replacement of i3lock-color (it's better and faster).
-A,sp,is Spotify dbus controller.

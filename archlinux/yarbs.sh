@@ -8,7 +8,7 @@
 
 while getopts ":a:r:p:h" o; do case "${o}" in
 	h) printf "Optional arguments for custom use:\\n  -r: Dotfiles repository (local file or url)\\n  -p: Dependencies and programs csv (local file or url)\\n  -a: AUR helper (must have pacman-like syntax)\\n  -h: Show this message\\n" && exit ;;
-	r) dotfilesrepo=${OPTARG} && git ls-remote "$dotfilesrepo" || exit ;;
+#	r) dotfilesrepo=${OPTARG} && git ls-remote "$dotfilesrepo" || exit ;;
 	p) progsfile=${OPTARG} ;;
 	a) aurhelper=${OPTARG} ;;
 	d) yuridot=${OPTARG} ;;
@@ -16,7 +16,7 @@ while getopts ":a:r:p:h" o; do case "${o}" in
 esac done
 
 # DEFAULTS:
-[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
+#[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
 [ -z "$yuridot" ] && yuridot="https://github.com/yurisuki/yuririce.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/yurisuki/YARBS/master/archlinux/yurgs.csv"
 [ -z "$aurhelper" ] && aurhelper="trizen"
@@ -248,7 +248,7 @@ installationloop
 fontinstall
 
 # Install the dotfiles in the user's home directory
-putgitrepo "$dotfilesrepo" "/home/$name"
+#putgitrepo "$dotfilesrepo" "/home/$name"
 putgitrepo "$yuridot" "/home/$name"
 rm -f "/home/$name/README.md" "/home/$name/click.png" "/home/$name/LICENSE"
 

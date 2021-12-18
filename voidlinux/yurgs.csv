@@ -17,6 +17,7 @@
 ,dunst,is a suckless notification system.
 ,exfat-utils,allows management of FAT drives.
 ,sxiv,is a minimalist image viewer.
+,playerctl,is for music control all over the system.
 ,ffmpeg,can record and splice video and audio on the command line.
 ,gnome-keyring,serves as the system keyring.
 ,arc-theme,gives the dark GTK theme used in YARBS.
