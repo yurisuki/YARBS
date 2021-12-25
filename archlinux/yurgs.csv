@@ -52,6 +52,7 @@ A,urlscan,parses URLs in the terminal allowing keyboard-based selection.
 ,xcape,gives the special escape/super mappings of YARBS.
 ,xclip,allows for copying and pasting from the command line.
 ,xdotool,provides window action utilities on the command line.
+,screenkey,shows key action on screen.
 ,xorg-xdpyinfo,aids with resolution determination and screen recording.
 ,qrencode,is tool for generating QR code.
 ,youtube-dl,can download any YouTube video (or playlist or channel) when given the link.
