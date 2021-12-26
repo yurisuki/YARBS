@@ -54,6 +54,7 @@ A,urlscan,parses URLs in the terminal allowing keyboard-based selection.
 ,xdotool,provides window action utilities on the command line.
 ,screenkey,shows key action on screen.
 ,xorg-xdpyinfo,aids with resolution determination and screen recording.
+,npm,is package manager for node.js.
 ,qrencode,is tool for generating QR code.
 ,youtube-dl,can download any YouTube video (or playlist or channel) when given the link.
 ,zathura,is a pdf viewer with vim-like bindings.
@@ -80,6 +81,7 @@ G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for 
 ,ncftp,uploads to FTP server.
 ,sxhkd,is for the keybindings.
 ,wget,does downloads from given link.
+N,@rafaelrinaldi/whereami,determines your current location.
 ,feh,is thing for pywal.
 ,figlet,is for cool ascii arts on terminal.
 A,betterlockscreen-git,is replacement of i3lock-color (it's better and faster).

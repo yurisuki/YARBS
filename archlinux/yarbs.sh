@@ -1,7 +1,7 @@
 #!/bin/sh
 # Luke's Auto Rice Boostrapping Script (LARBS)
 # by Luke Smith <luke@lukesmith.xyz>
-# and edited by yurisuki <yurisuki@waifu.club>
+# and edited by yurisuki <adam@adamnvrtil.fun>
 # License: GNU GPLv3
 
 ### OPTIONS AND VARIABLES ###
@@ -114,6 +114,12 @@ pipinstall() { \
 	yes | pip install "$1"
 	}
 
+npminstall() { \
+	dialog --title "YARBS Installation" --infobox "Installing the node.js package \`$1\` ($n of $total). $1 $2" 5 70
+	command -v npm || pacman -S --noconfirm --needed npm >/dev/null 2>&1
+	yes | npm install -g "$1"
+	}
+
 installationloop() { \
 	([ -f "$progsfile" ] && cp "$progsfile" /tmp/progs.csv) || curl -Ls "$progsfile" | sed '/^#/d' > /tmp/progs.csv
 	total=$(wc -l < /tmp/progs.csv)
@@ -126,6 +132,7 @@ installationloop() { \
 			"A") aurinstall "$program" "$comment" ;;
 			"G") gitmakeinstall "$program" "$comment" ;;
 			"P") pipinstall "$program" "$comment" ;;
+			"N") npminstall "$program" "$comment" ;;
 		esac
 	done < /tmp/progs.csv ;}
 

@@ -6,7 +6,7 @@ _ _  ___  ___  ___  ___
 
   ▓▓▓▓▓▓▓▓▓▓
  ░▓ about  ▓ This one will install Luke Smith's dotfiles and then on top of it my dotfiles
- ░▓ author ▓ yurisuki <yurisuki@waifu.club>
+ ░▓ author ▓ yurisuki <adam@adamnvrtil.fun>
  ░▓▓▓▓▓▓▓▓▓▓
  ░░░░░░░░░░
 

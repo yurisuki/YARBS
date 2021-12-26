@@ -1,7 +1,7 @@
 #!/bin/sh
 # Luke's Auto Rice Boostrapping Script (LARBS)
 # by Luke Smith <luke@lukesmith.xyz>
-# and edited by yurisuki <yurisuki@waifu.club>
+# and edited by yurisuki <adam@adamnvrtil.fun>
 # License: GNU GPLv3
 
 ### OPTIONS AND VARIABLES ###
