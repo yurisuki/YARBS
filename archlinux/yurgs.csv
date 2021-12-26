@@ -76,6 +76,7 @@ G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for 
 ,xsel,does enable reading of selection.
 ,firefox,is browser for YARBS.
 ,python-pywal,does really cool things (sets wallpaper, and then colors all over my ricing).
+,python-pywalfox,takes those colours from python-pywal, and drops them in firefox.
 ,ncftp,uploads to FTP server.
 ,sxhkd,is for the keybindings.
 ,wget,does downloads from given link.
