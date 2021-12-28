@@ -61,14 +61,15 @@ installshell() { \
 	}
 
 newperms() { # Set special sudoers settings for install (or after).
+	# Basic sudo
 	sed -i "/#YARBS/d" /etc/sudoers
 	echo "$* #YARBS" >> /etc/sudoers
+
+	# doas
 	sed -i "/#YARBS/d" /etc/doas.conf
-	[ -f "/usr/etc/doas.conf" ] && mv /usr/etc/doas.conf /usr/etc/old.doas.conf
-	echo "permit nopass $name as root #YARBS" >> /etc/doas.conf
 	mkdir /usr/etc
-	ln -s /etc/doas.conf /usr/etc/doas.conf
-	[ -f "/usr/etc/old.doas.conf" ] && cat /usr/etc/old.doas.conf >> /usr/etc/doas.conf && rm /usr/etc/old.doas.conf ;}
+	! [ -f "/usr/etc/doas.conf" ] && ln -s /etc/doas.conf /usr/etc/doas.conf
+	echo "permit nopass $name as root #YARBS" >> /etc/doas.conf ;}
 
 manualinstall() { # Installs $1 manually if not installed. Used only for AUR helper here.
 	[ -f "/usr/bin/$1" ] || (
@@ -270,7 +271,7 @@ resetlock || error "Failed to refresh lock screen picture."
 figlet
 
 # Install vim `plugged` plugins.
-#vim
+vim
 
 # Enable services here.
 serviceinit NetworkManager cronie
