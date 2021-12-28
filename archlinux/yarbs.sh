@@ -64,9 +64,12 @@ newperms() { # Set special sudoers settings for install (or after).
 	sed -i "/#YARBS/d" /etc/sudoers
 	echo "$* #YARBS" >> /etc/sudoers
 	sed -i "/#YARBS/d" /etc/doas.conf
+	[ -f "/usr/etc/doas.conf" ] && mv /usr/etc/doas.conf /usr/etc/old.doas.conf
 	echo "permit nopass $name as root #YARBS" >> /etc/doas.conf
 	mkdir /usr/etc
-	ln -s /etc/doas.conf /usr/etc/doas.conf ;}
+	ln -s /etc/doas.conf /usr/etc/doas.conf
+	[ -f "/usr/etc/old.doas.conf" ] && cat /usr/etc/old.doas.conf >> /usr/etc/doas.conf && rm /usr/etc/old.doas.conf ;}
+
 manualinstall() { # Installs $1 manually if not installed. Used only for AUR helper here.
 	[ -f "/usr/bin/$1" ] || (
 	dialog --infobox "Installing \"$1\", an AUR helper..." 4 50
@@ -112,7 +115,7 @@ pipinstall() { \
 npminstall() { \
 	dialog --title "YARBS Installation" --infobox "Installing the node.js package \`$1\` ($n of $total). $1 $2" 5 70
 	command -v npm || pacman -S --noconfirm --needed npm >/dev/null 2>&1
-	yes | npm install -g "$1"
+	yes | npm install -g "$1" >/dev/null 2>&1
 	}
 
 installationloop() { \

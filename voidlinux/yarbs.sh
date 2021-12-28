@@ -55,7 +55,7 @@ gitmakeinstall() {
 npminstall() { \
 	dialog --title "YARBS Installation" --infobox "Installing the npm package \`$1\` ($n of $total). $1 $2" 5 70
 	command -v npm || xbps-install -y nodejs >/dev/null 2>&1
-	npm install "$1"
+	yes | npm install -g "$1" >/dev/null 2>&1
 	}
 
 installationloop() { \
