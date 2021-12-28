@@ -270,7 +270,7 @@ resetlock || error "Failed to refresh lock screen picture."
 figlet
 
 # Install vim `plugged` plugins.
-vim
+#vim
 
 # Enable services here.
 serviceinit NetworkManager cronie
