@@ -66,9 +66,8 @@ newperms() { # Set special sudoers settings for install (or after).
 	echo "$* #YARBS" >> /etc/sudoers
 
 	# doas
-	sed -i "/#YARBS/d" /etc/doas.conf
 	mkdir /usr/etc
-	! [ -f "/usr/etc/doas.conf" ] && ln -s /etc/doas.conf /usr/etc/doas.conf
+	! [ -f "/usr/etc/doas.conf" ] && ln -sf /etc/doas.conf /usr/etc/doas.conf
 	echo "permit nopass $name as root #YARBS" >> /etc/doas.conf ;}
 
 manualinstall() { # Installs $1 manually if not installed. Used only for AUR helper here.
