@@ -75,6 +75,7 @@ G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for 
 ,odt2txt,enables .odt file previews in vifm.
 ,xclip,does enable reading and copying to clipboard.
 ,xsel,does enable reading of selection.
+A,zsh-fast-syntax-highlighting-git,provides syntax highlighting in the shell.
 ,firefox,is browser for YARBS.
 ,python-pywal,does really cool things (sets wallpaper, and then colors all over my ricing).
 ,python-pywalfox,takes those colours from python-pywal, and drops them in firefox.

@@ -4,22 +4,12 @@
 # and edited by yurisuki <adam@adamnvrtil.fun>
 # License: GNU GPLv3
 
-### OPTIONS AND VARIABLES ###
-
-while getopts ":a:r:p:h" o; do case "${o}" in
-	h) printf "Optional arguments for custom use:\\n  -r: Dotfiles repository (local file or url)\\n  -p: Dependencies and programs csv (local file or url)\\n  -a: AUR helper (must have pacman-like syntax)\\n  -h: Show this message\\n" && exit ;;
-#	r) dotfilesrepo=${OPTARG} && git ls-remote "$dotfilesrepo" || exit ;;
-	p) progsfile=${OPTARG} ;;
-	a) aurhelper=${OPTARG} ;;
-	d) yuridot=${OPTARG} ;;
-	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
-esac done
-
 # DEFAULTS:
 #[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
 [ -z "$yuridot" ] && yuridot="https://github.com/yurisuki/yuririce.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/yurisuki/YARBS/master/archlinux/yurgs.csv"
 [ -z "$aurhelper" ] && aurhelper="trizen"
+[ -z "$shell" ] && shell="zsh"
 
 ### FUNCTIONS ###
 
@@ -63,6 +53,11 @@ adduserandpass() { \
 refreshkeys() { \
 	dialog --infobox "Refreshing Arch Keyring..." 4 40
 	pacman --noconfirm -Sy archlinux-keyring >/dev/null 2>&1
+	}
+
+installshell() { \
+	dialog --infobox "Installing $shell shell..." 4 30
+	pacman --noconfirm -S --needed "$shell" >/dev/null 2>&1
 	}
 
 newperms() { # Set special sudoers settings for install (or after).
@@ -254,6 +249,9 @@ installationloop
 # Install the fonts
 fontinstall
 
+# Install the shell
+installshell
+
 # Install the dotfiles in the user's home directory
 #putgitrepo "$dotfilesrepo" "/home/$name"
 putgitrepo "$yuridot" "/home/$name"
@@ -276,6 +274,11 @@ serviceinit NetworkManager cronie
 
 # Most important command! Get rid of the beep!
 systembeepoff
+
+# Make zsh the default shell for the user.
+command -v zsh || pacman -S --noconfirm --needed zsh >/dev/null 2>&1
+chsh -s /bin/zsh "$name" >/dev/null 2>&1
+sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # all commands without the password prompt

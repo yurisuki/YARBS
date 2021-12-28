@@ -6,18 +6,11 @@
 
 ### OPTIONS AND VARIABLES ###
 
-while getopts ":a:r:p:h" o; do case "${o}" in
-	h) printf "Optional arguments for custom use:\\n  -r: Dotfiles repository (local file or url)\\n  -p: Dependencies and programs csv (local file or url)\\n  -a: AUR helper (must have pacman-like syntax)\\n  -h: Show this message\\n" && exit ;;
-#	r) dotfilesrepo=${OPTARG} && git ls-remote "$dotfilesrepo" || exit ;;
-	p) progsfile=${OPTARG} ;;
-	d) yuridot=${OPTARG} ;;
-	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
-esac done
-
 # DEFAULTS:
 #[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
 [ -z "$yuridot" ] && yuridot="https://github.com/yurisuki/yuririce.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/yurisuki/YARBS/master/voidlinux/yurgs.csv"
+[ -z "$shell" ] && shell="zsh"
 
 ### FUNCTIONS ###
 
@@ -61,7 +54,7 @@ gitmakeinstall() {
 
 npminstall() { \
 	dialog --title "YARBS Installation" --infobox "Installing the npm package \`$1\` ($n of $total). $1 $2" 5 70
-	command -v npm || xbps-install nodejs >/dev/null 2>&1
+	command -v npm || xbps-install -y nodejs >/dev/null 2>&1
 	npm install "$1"
 	}
 
@@ -146,6 +139,11 @@ preinstallmsg || error "User exited."
 dialog --title "YARBS Installation" --infobox "Installing all needed packages." 5 70
 xbps-install -y curl base-devel git libXinerama-devel libX11 libX11-devel libXft libXft-devel fontconfig fontconfig-devel void-repo-nonfree >/dev/null 2>&1
 
+installshell() { \
+	dialog --infobox "Installing $shell shell..." 4 30
+	xbps-install -y "$shell" >/dev/null 2>&1
+	}
+
 # Allow user to run sudo without password. Since AUR programs must be installed
 # in a fakeroot environment, this is required for all builds with AUR.
 newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
@@ -155,6 +153,9 @@ newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 # the user has been created and has priviledges to run sudo without a password
 # and all build dependencies are installed.
 installationloop
+
+# Install the shell
+installshell
 
 # Install the dotfiles in the user's home directory
 #putgitrepo "$dotfilesrepo" "/home/$name"
@@ -178,6 +179,11 @@ serviceinit NetworkManager dbus pulseaudio
 
 # Most important command! Get rid of the beep!
 systembeepoff
+
+# Make zsh the default shell for the user.
+command -v zsh || xbps-install -y zsh >/dev/null 2>&1
+chsh -s /bin/zsh "$name" >/dev/null 2>&1
+sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # all commands without the password prompt

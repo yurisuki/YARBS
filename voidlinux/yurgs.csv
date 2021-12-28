@@ -75,6 +75,7 @@ G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for 
 ,sxhkd,is for the keybindings.
 ,wget,does downloads from given link.
 ,feh,is thing for pywal.
+,zsh-syntax-highlighting,provides syntax highlighting in the shell.
 ,figlet,is for cool ascii arts on terminal.
 N,@rafaelrinaldi/whereami,determines your current location.
 ,betterlockscreen,is replacement of i3lock-color (it's better and faster).
