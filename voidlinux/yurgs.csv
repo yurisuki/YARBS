@@ -6,6 +6,7 @@
 ,kitty,is a terminal emulator used in YARBS.
 ,font-libertine-otf,provides the sans and serif fonts for YARBS.
 ,vifm,is an extensive terminal file manager that everyone likes.
+,Thunar,is a GUI file manager.
 ,ed,is the standard editor!
 ,tree,lists directory contents like trees. Used by vifm.
 ,arandr,is a UI for screen adjustment.
