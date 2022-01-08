@@ -269,6 +269,10 @@ resetlock || error "Failed to refresh lock screen picture."
 # Download some figlet fonts and install them.
 figlet
 
+# Make zsh the default shell for the user.
+chsh -s /bin/zsh "$name" >/dev/null 2>&1
+sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+
 # Install vim `plugged` plugins.
 vim
 

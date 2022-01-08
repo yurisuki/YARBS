@@ -171,6 +171,10 @@ resetlock || error "Failed to refresh lock screen picture."
 # Download some figlet fonts and install them.
 figlet
 
+# Make zsh the default shell for the user.
+chsh -s /bin/zsh "$name" >/dev/null 2>&1
+sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+
 # Install vim `plugged` plugins.
 vim
 
@@ -182,8 +186,6 @@ systembeepoff
 
 # Make zsh the default shell for the user.
 command -v zsh || xbps-install -y zsh >/dev/null 2>&1
-chsh -s /bin/zsh "$name" >/dev/null 2>&1
-sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # all commands without the password prompt
