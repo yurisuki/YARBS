@@ -165,17 +165,18 @@ serviceinit() { for service in "$@"; do
 	systemctl start "$service"
 	done ;}
 
+
+pipeenable() { # Enable and start pipewire.
+	dialog --infobox "Enabling pipewire..." 4 50
+	sudo -u "$name" systemctl enable --user --now pipewire pipewire-pulse >/dev/null 2>&1
+}
 systembeepoff() { dialog --infobox "Getting rid of that retarded error beep sound..." 10 50
 	rmmod pcspkr
 	echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
 
-resetpulse() { dialog --infobox "Reseting Pulseaudio..." 4 50
-	killall pulseaudio
-	sudo -n "$name" pulseaudio --start ;}
-
 resetlock() { # Refresh lock picture for betterlockscreen
 	dialog --infobox "Refreshing lock screen picture..." 4 50
-	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null
+	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null 2>&1
 }
 
 figlet() { # Download and install some figlet fonts.
@@ -260,9 +261,6 @@ installshell
 putgitrepo "$yuridot" "/home/$name"
 rm -f "/home/$name/README.md" "/home/$name/click.png" "/home/$name/LICENSE"
 
-# Pulseaudio, if/when initially installed, often needs a restart to work immediately.
-[ -f /usr/bin/pulseaudio ] && resetpulse
-
 # Refresh lock screen picture, so you can lock the screen.
 resetlock || error "Failed to refresh lock screen picture."
 
@@ -278,6 +276,9 @@ vim
 
 # Enable services here.
 serviceinit NetworkManager cronie
+
+# Enable pipewire.
+pipeenable
 
 # Most important command! Get rid of the beep!
 systembeepoff
