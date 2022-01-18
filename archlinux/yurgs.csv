@@ -38,6 +38,7 @@ A,ttf-symbola,provides unicode and emoji symbols.
 ,pipewire,is the audio system.
 ,pipewire-pulse,is an audio interface with pulse.
 ,pipewire-alsa,is an audio interface with ALSA.
+,pamixer,is for volume applet.
 ,pulsemixer,is an intuitive ncurses audio controller.
 ,playerctl,is for music control all over the system.
 ,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in YARBS.
