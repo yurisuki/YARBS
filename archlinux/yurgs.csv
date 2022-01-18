@@ -16,6 +16,7 @@ A,doas,is the faster sudo replacement.
 ,calcurse,is a lightweight terminal-based calendar.
 ,xcompmgr,is for transparency and removing screen-tearing.
 ,xorg-xprop,is a tool for detecting window properties.
+,man-db,is the manual for your whole computer.
 ,dosfstools,allows your computer to access dos-like filesystems.
 ,libnotify,allows desktop notifications.
 ,dunst,is a suckless notification system.
