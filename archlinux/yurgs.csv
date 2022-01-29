@@ -76,7 +76,7 @@ A,python-ueberzug,generates image previews in vifm and other terminal programs.
 A,libxft-bgra,is for viewing emojis in tools, that don't support them by default.
 A,task-spooler,queues commands or files for download.
 A,simple-mtpfs,enables the mounting of cell phones.
-G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for selection.
+G,https://github.com/yurisuki/dmenu.git,runs commands and provides a UI for selection.
 G,https://github.com/yurisuki/slock.git,locks screen.
 ,docx2txt,enables .docx file previews in vifm.
 ,odt2txt,enables .odt file previews in vifm.
