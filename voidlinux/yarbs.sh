@@ -90,11 +90,6 @@ systembeepoff() { dialog --infobox "Getting rid of that retarded error beep soun
 	rmmod pcspkr
 	echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
 
-resetlock() { # Refresh lock picture for betterlockscreen
-	dialog --infobox "Refreshing lock screen picture..." 4 50
-	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null
-}
-
 
 figlet() { # Download and install some figlet fonts.
 	dialog --infobox "Downloading some figlet fonts..." 4 40
@@ -164,9 +159,6 @@ rm -f "/home/$name/README.md" "/home/$name/click.png" "/home/$name/LICENSE"
 
 # Pulseaudio, if/when initially installed, often needs a restart to work immediately.
 [ -f /usr/bin/pulseaudio ] && resetpulse
-
-# Refresh lock screen picture, so you can lock the screen.
-resetlock || error "Failed to refresh lock screen picture."
 
 # Download some figlet fonts and install them.
 figlet

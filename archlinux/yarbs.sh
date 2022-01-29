@@ -174,11 +174,6 @@ systembeepoff() { dialog --infobox "Getting rid of that retarded error beep soun
 	rmmod pcspkr
 	echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
 
-resetlock() { # Refresh lock picture for betterlockscreen
-	dialog --infobox "Refreshing lock screen picture..." 4 50
-	sudo -u "$name" betterlockscreen -u /home/$name/.config/walllock.png >/dev/null 2>&1
-}
-
 figlet() { # Download and install some figlet fonts.
 	dialog --infobox "Downloading some figlet fonts..." 4 40
 	rm -rf figlet-fonts >/dev/null 2>&1
@@ -260,9 +255,6 @@ installshell
 #putgitrepo "$dotfilesrepo" "/home/$name"
 putgitrepo "$yuridot" "/home/$name"
 rm -f "/home/$name/README.md" "/home/$name/click.png" "/home/$name/LICENSE"
-
-# Refresh lock screen picture, so you can lock the screen.
-resetlock || error "Failed to refresh lock screen picture."
 
 # Download some figlet fonts and install them.
 figlet

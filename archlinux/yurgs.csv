@@ -77,6 +77,7 @@ A,libxft-bgra,is for viewing emojis in tools, that don't support them by default
 A,task-spooler,queues commands or files for download.
 A,simple-mtpfs,enables the mounting of cell phones.
 G,https://github.com/lukesmithxyz/dmenu.git,runs commands and provides a UI for selection.
+G,https://github.com/yurisuki/slock.git,locks screen.
 ,docx2txt,enables .docx file previews in vifm.
 ,odt2txt,enables .odt file previews in vifm.
 ,xclip,does enable reading and copying to clipboard.
@@ -91,4 +92,3 @@ A,zsh-fast-syntax-highlighting-git,provides syntax highlighting in the shell.
 N,@rafaelrinaldi/whereami,determines your current location.
 ,feh,is thing for pywal.
 ,figlet,is for cool ascii arts on terminal.
-A,betterlockscreen-git,is replacement of i3lock-color (it's better and faster).
