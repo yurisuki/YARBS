@@ -36,6 +36,7 @@ A,gtk-theme-arc-gruvbox-git,gives the dark GTK theme used in YARBS.
 A,polybar,is the bar for bspwm.
 A,ios-emoji,is a package that gives the system unicode symbols and emojis used in the status bar and elsewhere.
 A,ttf-symbola,provides unicode and emoji symbols.
+A,nerd-fonts-inconsolata,uses symbols in polybar.
 A,xcursor-breeze,is KDE cursor used YARBS.
 ,ntfs-3g,allows accessing NTFS partitions.
 ,pipewire,is the audio system.
