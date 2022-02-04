@@ -71,7 +71,7 @@ G,https://github.com/yurisuki/slock.git,locks screen.
 ,docx2txt,enables .docx file previews in vifm.
 ,odt2txt,enables .odt file previews in vifm.
 ,xsel,does enable reading of selection.
-,chromium,is the browser that replaces Firefox.
+,qutebrowser,is the browser used in YARBS.
 ,pywal,does really cool things.
 ,ncftp,uploads to FTP server.
 ,sxhkd,is for the keybindings.
@@ -80,4 +80,3 @@ G,https://github.com/yurisuki/slock.git,locks screen.
 ,zsh-syntax-highlighting,provides syntax highlighting in the shell.
 ,figlet,is for cool ascii arts on terminal.
 N,@rafaelrinaldi/whereami,determines your current location.
-,betterlockscreen,is replacement of i3lock-color (it's better and faster).

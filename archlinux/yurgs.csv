@@ -84,7 +84,7 @@ G,https://github.com/yurisuki/slock.git,locks screen.
 ,xclip,does enable reading and copying to clipboard.
 ,xsel,does enable reading of selection.
 A,zsh-fast-syntax-highlighting-git,provides syntax highlighting in the shell.
-,firefox,is browser for YARBS.
+,qutebrowser,is browser for YARBS.
 ,python-pywal,does really cool things (sets wallpaper, and then colors all over my ricing).
 ,python-pywalfox,takes those colours from python-pywal, and drops them in firefox.
 ,ncftp,uploads to FTP server.
