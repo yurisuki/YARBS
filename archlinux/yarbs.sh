@@ -141,7 +141,8 @@ fontinstall() { # Downloads some fonts.
 	ttf-droid
 	ttf-gentium
 	ttf-liberation
-	ttf-ubuntu-font-family" && echo "$fonts" > /tmp/fonts
+	ttf-ubuntu-font-family
+	noto-fonts" && echo "$fonts" > /tmp/fonts
 	totalfonts=$(wc -l < /tmp/fonts)
 	fontsn=1
 	for currentfont in $(cat /tmp/fonts); do
