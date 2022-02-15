@@ -99,15 +99,6 @@ figlet() { # Download and install some figlet fonts.
 	mv -f figlet-fonts/* /usr/share/figlet/fonts/. >/dev/null 2>&1
 }
 
-vim() { # Install vim `plugged` plugins.
-	dialog --infobox "Downloading vim \`plugged\` plugins..." 4 50
-	sudo -u "$name" mkdir -p "/home/$name/.config/nvim/autoload"
-	curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > "/home/$name/.config/nvim/autoload/plug.vim"
-	dialog --infobox "Installing (neo)vim plugins..." 4 50
-	(sleep 30 && killall nvim) &
-	sudo -u "$name" nvim -E -c "PlugUpdate|visual|q|q" >/dev/null 2>&1
-}
-
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
 	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Luke" 12 80
@@ -166,9 +157,6 @@ figlet
 # Make zsh the default shell for the user.
 chsh -s /bin/zsh "$name" >/dev/null 2>&1
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
-
-# Install vim `plugged` plugins.
-vim
 
 # Enable services here..
 serviceinit NetworkManager dbus pulseaudio
