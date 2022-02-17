@@ -47,7 +47,7 @@ A,xcursor-breeze,is KDE cursor used YARBS.
 ,playerctl,is for music control all over the system.
 ,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in YARBS.
 A,sc-im,is an Excel-like terminal spreadsheet manager.
-A,gotop,provides system usage information and displays processes.
+,btop,provides system usage information and displays processes.
 ,maim,can take quick screenshots at your request.
 ,socat,is a socket utility.
 ,tmux,is a terminal multiplexer and the dropdown window in YARBS.
