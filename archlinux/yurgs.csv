@@ -74,7 +74,6 @@ A,python-ueberzug,generates image previews in vifm and other terminal programs.
 ,fzf,is a fuzzy finder tool.
 ,highlight,can highlight code output.
 ,xorg-xbacklight,enables changing screen brightness levels.
-A,libxft-bgra,is for viewing emojis in tools, that don't support them by default.
 A,task-spooler,queues commands or files for download.
 A,simple-mtpfs,enables the mounting of cell phones.
 G,https://github.com/yurisuki/dmenu.git,runs commands and provides a UI for selection.
@@ -94,3 +93,4 @@ N,@rafaelrinaldi/whereami,determines your current location.
 ,feh,is thing for pywal.
 ,figlet,is for cool ascii arts on terminal.
 A,themechanger-git,let's you change GTK themes.
+A,libxft-bgra,is for viewing emojis in tools, that don't support them by default.
