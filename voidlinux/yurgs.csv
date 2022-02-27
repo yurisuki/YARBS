@@ -56,7 +56,7 @@ N,emojione,is a package that gives the system unicode symbols and emojis used in
 ,xdotool,provides window action utilities on the command line.
 ,screenkey,shows key action on screen.
 ,qrencode,is tool for generating QR code.
-,youtube-dl,can download any YouTube video (or playlist or channel) when given the link.
+,yt-dlp,can download any YouTube video (or playlist or channel) when given the link.
 ,zathura,is a pdf viewer with vim-like bindings.
 ,zathura-djvu,gives zathura the ability to read .djvu files.
 ,zathura-pdf-mupdf,allows mupdf pdf compatibility in zathura.
