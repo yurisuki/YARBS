@@ -4,7 +4,6 @@
 ,opendoas,is the faster sudo replacement.
 ,font-inconsolata-otf,is the monospace font of YARBS.
 ,kitty,is a terminal emulator used in YARBS.
-,qterminal,is a dropdown terminal emulator used in YARBS.
 ,font-libertine-otf,provides the sans and serif fonts for YARBS.
 ,ranger,is an extensive terminal file manager that everyone likes.
 ,Thunar,is a GUI file manager.
