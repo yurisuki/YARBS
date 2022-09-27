@@ -183,6 +183,9 @@ figlet() { # Download and install some figlet fonts.
 	mv -f figlet-fonts/* /usr/share/figlet/fonts/. >/dev/null 2>&1
 }
 
+firstshortcuts() {
+}
+
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
 	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Luke" 12 80
@@ -268,6 +271,9 @@ systembeepoff
 command -v zsh || pacman -S --noconfirm --needed zsh >/dev/null 2>&1
 chsh -s /bin/zsh "$name" >/dev/null 2>&1
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+
+# Execute `shortcuts` script
+sudo -u "$name" shortcuts >/dev/null 2>&1
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # all commands without the password prompt

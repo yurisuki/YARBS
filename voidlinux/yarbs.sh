@@ -167,6 +167,9 @@ systembeepoff
 # Make zsh the default shell for the user.
 command -v zsh || xbps-install -y zsh >/dev/null 2>&1
 
+# Execute `shortcuts` script
+sudo -u "$name" shortcuts >/dev/null 2>&1
+
 # This line, overwriting the `newperms` command above will allow the user to run
 # all commands without the password prompt
 newperms "%wheel ALL=(ALL) NOPASSWD:ALL"

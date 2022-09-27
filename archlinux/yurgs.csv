@@ -28,6 +28,7 @@ A,doas,is the faster sudo replacement.
 A,gtk-theme-arc-gruvbox-git,gives the dark GTK theme used in YARBS.
 ,neovim,an tidier vim with some useful features
 ,mpd,is a lightweight music daemon.
+A,cider-bin,is Apple Music player.
 ,mpc,is a terminal interface for mpd.
 ,mpv,is the patrician's choice video/gif player.
 ,ncmpcpp,a ncurses interface for music with multiple formats and a powerful tag editor.
@@ -83,7 +84,8 @@ G,https://github.com/yurisuki/slock.git,locks screen.
 ,xclip,does enable reading and copying to clipboard.
 ,xsel,does enable reading of selection.
 A,zsh-fast-syntax-highlighting-git,provides syntax highlighting in the shell.
-,qutebrowser,is browser for YARBS.
+,brave,is browser for YARBS.
+,qutebrowser,is alternative browser for YARBS.
 ,python-pywal,does really cool things (sets wallpaper, and then colors all over my ricing).
 ,python-pywalfox,takes those colours from python-pywal, and drops them in firefox.
 ,ncftp,uploads to FTP server.
