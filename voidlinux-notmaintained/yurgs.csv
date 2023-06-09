@@ -12,6 +12,7 @@
 ,arandr,is a UI for screen adjustment.
 ,bc,is used for a dropdown calculator.
 ,calcurse,is a lightweight terminal-based calendar.
+,numlockx,turns on automatically numlock on X start.
 ,xcompmgr,is for transparency and removing screen-tearing.
 ,dosfstools,allows your computer to access dos-like filesystems.
 ,libnotify,allows desktop notifications.

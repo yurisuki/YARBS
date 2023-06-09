@@ -14,6 +14,7 @@ A,doas,is the faster sudo replacement.
 ,arandr,is a UI for screen adjustment.
 ,kitty,is a terminal emulator used in YARBS.
 ,bc,is used for a dropdown calculator.
+,numlockx,turns on automatically numlock on X start.
 ,calcurse,is a lightweight terminal-based calendar.
 ,xcompmgr,is for transparency and removing screen-tearing.
 ,xorg-xprop,is a tool for detecting window properties.
